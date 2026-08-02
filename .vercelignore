@@ -1,0 +1,9 @@
+# Загружаем в Vercel только файлы статического сайта.
+# README и Google Apps Script остаются в репозитории, но не публикуются как страницы сайта.
+/*
+!index.html
+!styles.css
+!script.js
+!config.js
+!public
+!vercel.json

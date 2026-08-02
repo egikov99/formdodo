@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#e85d04">
+    <meta name="description" content="Ekskluzywna przedsprzedaż Dodo Pizza Polska.">
+    <title>Ekskluzywna przedsprzedaż | Dodo Pizza Polska</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./config.js" defer></script>
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div class="page-overlay" aria-hidden="true"></div>
+
+    <main class="page-shell">
+      <section class="form-card" aria-labelledby="page-title">
+        <img
+          class="brand-logo"
+          src="./public/logo.svg"
+          alt="Dodo Pizza Polska"
+          width="180"
+          height="57"
+        >
+
+        <div id="form-view">
+          <header class="form-header">
+            <!--<p class="eyebrow">Dodo Pizza Polska</p>-->
+            <h1 id="page-title">Ekskluzywna przedsprzedaż</h1>
+            <p class="intro">
+              Zostaw swoje dane, aby otrzymać informacje o ekskluzywnej przedsprzedaży.
+            </p>
+          </header>
+
+          <form id="lead-form" novalidate>
+            <div class="field">
+              <label for="name">Imię</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Wpisz swoje imię"
+                autocomplete="given-name"
+                minlength="2"
+                required
+                aria-describedby="name-error"
+              >
+              <p class="field-error" id="name-error" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+              <label for="phone">Numer telefonu</label>
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                placeholder="+48 123 456 789"
+                autocomplete="tel"
+                inputmode="tel"
+                required
+                aria-describedby="phone-error"
+              >
+              <p class="field-error" id="phone-error" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+              <label for="email">Adres e-mail</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="twoj@email.pl"
+                autocomplete="email"
+                inputmode="email"
+                required
+                aria-describedby="email-error"
+              >
+              <p class="field-error" id="email-error" aria-live="polite"></p>
+            </div>
+
+            <div class="honeypot" aria-hidden="true">
+              <label for="website">Strona internetowa</label>
+              <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+            </div>
+
+            <fieldset class="consents">
+              <legend>Zgody</legend>
+
+              <div class="checkbox-row">
+                <input
+                  id="privacy-consent"
+                  name="privacyConsent"
+                  type="checkbox"
+                  required
+                  aria-describedby="privacy-consent-error"
+                >
+                <label for="privacy-consent">
+                  Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z
+                  <a
+                    href="https://dodopizza.pl/legal/privacy-policy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >Polityką Prywatności Dodo Pizza</a>.
+                </label>
+              </div>
+              <p class="field-error consent-error" id="privacy-consent-error" aria-live="polite"></p>
+
+              <div class="checkbox-row">
+                <input id="marketing-consent" name="marketingConsent" type="checkbox">
+                <label for="marketing-consent">
+                  Wyrażam zgodę na otrzymywanie informacji marketingowych i handlowych drogą
+                  elektroniczną oraz telefoniczną.
+                </label>
+              </div>
+            </fieldset>
+
+            <p id="submit-error" class="submit-message" role="alert" hidden>
+              Nie udało się wysłać formularza. Spróbuj ponownie za chwilę.
+            </p>
+
+            <button id="submit-button" class="primary-button" type="submit">
+              <span class="button-label">Prześlij</span>
+              <span class="spinner" aria-hidden="true"></span>
+            </button>
+          </form>
+        </div>
+
+        <div id="success-view" class="success-view" role="status" tabindex="-1" hidden>
+          <div class="success-icon" aria-hidden="true">✓</div>
+          <h2>Dziękujemy!</h2>
+          <p>Twoje zgłoszenie zostało zapisane.</p>
+          <button id="reset-button" class="secondary-button" type="button">
+            Wyślij kolejne zgłoszenie
+          </button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
