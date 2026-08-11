@@ -45,7 +45,7 @@ input {
   z-index: 0;
   background:
     radial-gradient(circle at 15% 12%, rgba(232, 93, 4, 0.2), transparent 38%),
-    linear-gradient(120deg, rgba(30, 18, 10, 0.7), rgba(45, 27, 15, 0.38));
+    linear-gradient(120deg, rgba(30, 18, 10, 0.25), rgba(45, 27, 15, 0.1));
 }
 
 .page-shell {
@@ -75,11 +75,11 @@ input {
   display: block;
   width: 164px;
   height: auto;
-  margin: 0 0 26px;
+  margin: 0 0 12px;
 }
 
 .form-header {
-  margin-bottom: 26px;
+  margin-bottom: 16px;
 }
 
 .eyebrow {
@@ -113,7 +113,7 @@ h1 {
 }
 
 .field {
-  margin-bottom: 17px;
+  margin-bottom: 12px;
 }
 
 .field > label,
@@ -185,7 +185,7 @@ h1 {
   grid-template-columns: 20px minmax(0, 1fr);
   gap: 10px;
   align-items: start;
-  margin-top: 13px;
+  margin-top: 6px;
 }
 
 .checkbox-row input {
