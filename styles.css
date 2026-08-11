@@ -44,8 +44,8 @@ input {
   inset: 0;
   z-index: 0;
   background:
-    radial-gradient(circle at 15% 12%, rgba(232, 93, 4, 0.2), transparent 38%),
-    linear-gradient(120deg, rgba(30, 18, 10, 0.25), rgba(45, 27, 15, 0.1));
+    radial-gradient(circle at 15% 12%, rgba(232, 93, 4, 0), transparent 38%),
+    linear-gradient(120deg, rgba(30, 18, 10, 0), rgba(45, 27, 15, 0));
 }
 
 .page-shell {
@@ -67,8 +67,8 @@ input {
   border-radius: 28px;
   background: var(--card);
   box-shadow: 0 28px 70px rgba(27, 16, 9, 0.34);
-  backdrop-filter: blur(2px) saturate(100%);
-  -webkit-backdrop-filter: blur(2px) saturate(100%);
+  backdrop-filter: blur(10px) saturate(100%);
+  -webkit-backdrop-filter: blur(10px) saturate(100%);
 }
 
 .brand-logo {
