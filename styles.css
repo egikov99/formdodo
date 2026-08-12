@@ -155,8 +155,8 @@ h1 {
 }
 
 .field-error {
-  min-height: 18px;
-  margin: 5px 0 0;
+  min-height: 5px;
+  margin: 0px 0 0;
   color: var(--danger);
   font-size: 0.78rem;
   line-height: 1.35;
