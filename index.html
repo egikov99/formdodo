@@ -34,7 +34,7 @@
 
           <form id="lead-form" novalidate>
             <div class="field">
-              <label for="name">Imię</label>
+              <label for="name">Imię*</label>
               <input
                 id="name"
                 name="name"
@@ -48,6 +48,10 @@
               <p class="field-error" id="name-error" aria-live="polite"></p>
             </div>
 
+            <p class="contact-hint" id="contact-hint">
+              Podaj tylko jeden sposób kontaktu: numer telefonu albo adres e-mail.
+            </p>
+
             <div class="field">
               <label for="phone">Numer telefonu</label>
               <input
@@ -57,8 +61,7 @@
                 placeholder="+48 123 456 789"
                 autocomplete="tel"
                 inputmode="tel"
-                required
-                aria-describedby="phone-error"
+                aria-describedby="contact-hint phone-error"
               >
               <p class="field-error" id="phone-error" aria-live="polite"></p>
             </div>
@@ -72,8 +75,7 @@
                 placeholder="twoj@email.pl"
                 autocomplete="email"
                 inputmode="email"
-                required
-                aria-describedby="email-error"
+                aria-describedby="contact-hint email-error"
               >
                <p class="field-error" id="email-error" aria-live="polite"></p>
             </div>
