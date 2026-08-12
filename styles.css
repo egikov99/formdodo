@@ -112,13 +112,6 @@ h1 {
   line-height: 1.55;
 }
 
-.contact-hint {
-  margin-bottom: 12px;
-  color: var(--muted);
-  font-size: 0.86rem;
-  line-height: 1.4;
-}
-
 .field {
   margin-bottom: 6px;
 }

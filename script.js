@@ -16,10 +16,7 @@
     privacyConsent: document.querySelector("#privacy-consent")
   };
 
-  const missingContactValues = {
-    phone: "+48000000000",
-    email: "nie-wypelniono@example.invalid"
-  };
+  const missingEmailValue = "nie-wypelniono@example.invalid";
 
   let isSubmitting = false;
 
@@ -63,8 +60,7 @@
 
     const name = fields.name.value.trim();
     const rawPhone = fields.phone.value.trim();
-    const phoneProvided = rawPhone.length > 0;
-    const phone = phoneProvided ? normalizePhone(rawPhone) : "";
+    const phone = normalizePhone(rawPhone);
     const email = normalizeEmail(fields.email.value);
     const emailProvided = email.length > 0;
     let firstInvalidField = null;
@@ -74,17 +70,12 @@
       firstInvalidField ||= fields.name;
     }
 
-    if (phoneProvided === emailProvided) {
-      const message = phoneProvided
-        ? "Wybierz tylko jeden sposób kontaktu."
-        : "Wpisz numer telefonu albo adres e-mail.";
-      showFieldError("phone", message);
-      showFieldError("email", message);
+    if (!phone) {
+      showFieldError("phone", "Wpisz poprawny numer telefonu.");
       firstInvalidField ||= fields.phone;
-    } else if (phoneProvided && !phone) {
-      showFieldError("phone", "Wpisz poprawny polski numer telefonu.");
-      firstInvalidField ||= fields.phone;
-    } else if (emailProvided && !isValidEmail(email)) {
+    }
+
+    if (emailProvided && !isValidEmail(email)) {
       showFieldError("email", "Wpisz poprawny adres e-mail.");
       firstInvalidField ||= fields.email;
     }
@@ -153,8 +144,7 @@
         method: "POST",
         body: new URLSearchParams({
           ...payload,
-          phone: payload.phone || missingContactValues.phone,
-          email: payload.email || missingContactValues.email,
+          email: payload.email || missingEmailValue,
           privacyConsent: String(payload.privacyConsent),
           marketingConsent: String(payload.marketingConsent)
         })
@@ -190,14 +180,7 @@
   resetButton.addEventListener("click", resetForm);
 
   Object.entries(fields).forEach(([fieldName, input]) => {
-    const clearFieldErrors = () => {
-      showFieldError(fieldName, "");
-      if (fieldName === "phone" || fieldName === "email") {
-        showFieldError(fieldName === "phone" ? "email" : "phone", "");
-      }
-    };
-
-    input.addEventListener("input", clearFieldErrors);
-    input.addEventListener("change", clearFieldErrors);
+    input.addEventListener("input", () => showFieldError(fieldName, ""));
+    input.addEventListener("change", () => showFieldError(fieldName, ""));
   });
 })();

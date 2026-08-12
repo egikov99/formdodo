@@ -48,12 +48,8 @@
               <p class="field-error" id="name-error" aria-live="polite"></p>
             </div>
 
-            <!--<p class="contact-hint" id="contact-hint">
-              Podaj tylko jeden sposób kontaktu: numer telefonu albo adres e-mail.
-            </p>-->
-
             <div class="field">
-              <label for="phone">Numer telefonu</label>
+              <label for="phone">Numer telefonu*</label>
               <input
                 id="phone"
                 name="phone"
@@ -61,13 +57,14 @@
                 placeholder="+48 123 456 789"
                 autocomplete="tel"
                 inputmode="tel"
-                aria-describedby="contact-hint phone-error"
+                required
+                aria-describedby="phone-error"
               >
               <p class="field-error" id="phone-error" aria-live="polite"></p>
             </div>
 
             <div class="field">
-              <label for="email">Adres e-mail</label>
+              <label for="email">Adres e-mail (opcjonalnie)</label>
               <input
                 id="email"
                 name="email"
@@ -75,7 +72,7 @@
                 placeholder="twoj@email.pl"
                 autocomplete="email"
                 inputmode="email"
-                aria-describedby="contact-hint email-error"
+                aria-describedby="email-error"
               >
                <p class="field-error" id="email-error" aria-live="polite"></p>
             </div>
